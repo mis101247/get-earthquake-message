@@ -13,22 +13,18 @@ var account = {
     var interval =  1 * 1000; //每1秒去爬一次
     var init='';
 
+     getEarthquake(function (err, result) {
+         init = result[0]['time'];
+     });
 
      setInterval(function(){
-         if (init==''){
-            getEarthquake(function (err, result) {
-                init = result[0]['time'];
-            });
-         }
-         else{
              getEarthquake(function (err, result) {
                 if (init != result[0]['time']){
                     init = result[0]['time'];
                     var url = 'https://www.cwb.gov.tw/V7/prevent/PWS_History.htm';
-                    api.sendMessage('[告警範圍]' + result[0].local + ';' + result[0]['content'] + url , id);  
+                    api.sendMessage('[告警範圍]' + result[0].local + '\n\n' + result[0]['content'] + '\n\n' + url , id);  
                 }
              });
-         }
      } , interval);
  });
 
