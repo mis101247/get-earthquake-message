@@ -24,3 +24,5 @@ key.js未加入git 此檔案為你發送訊息的facebook帳戶密碼
 
     node yo.js
     
+## Demo
+<img src="https://i.imgur.com/4ERSdqP.jpg" width="480">
