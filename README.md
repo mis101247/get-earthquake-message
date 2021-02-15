@@ -1,26 +1,29 @@
-# 災防告警廣播訊息爬蟲
+# Disaster prevention warning broadcast message crawler 災防告警廣播訊息爬蟲
 
-利用Node.js爬中央氣象局"[災防告警廣播訊息服務](https://www.cwb.gov.tw/V7/prevent/PWS_History.htm)"
-假如執行後每秒去爬一次假如該網頁有更新資訊則會將最新資訊透過 [facebook-chat-api](https://github.com/Schmavery/facebook-chat-api) 發送至你設定的uid上
+Node.js crawler CWB information"[災防告警廣播訊息服務](https://www.cwb.gov.tw/V7/prevent/PWS_History.htm)"
+
+cron every second
+Crawl once per second. If there is updated information on the page, the latest information will sent your uid that you set 
+[facebook-chat-api](https://github.com/Schmavery/facebook-chat-api) 
 
 
-# 使用說明
+# build
 
-## 建立檔案
+## make a key file
 
-key.js未加入git 此檔案為你發送訊息的facebook帳戶密碼
+make a key.js, this file is your facebook account/password env
 
-內容為
+content:
 
     module.exports = '********';
 
-## 使用的套件
+## packages
  - request
  - cheerio
  - facebook-chat-api
  
  
-## 執行
+## Usage
 
     node yo.js
     
